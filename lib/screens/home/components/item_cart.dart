@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:shopping_bag_demo/constants.dart';
 import '../../../models/products.dart';
 
@@ -30,13 +31,14 @@ class ItemCart extends StatelessWidget {
             padding: const EdgeInsets.all(5),
             child: Text(
               products.title!,
-              style: TextStyle(
-                color: kTextLightColor,
+              style: GoogleFonts.poppins(
+                fontSize: 18,
+                color: Colors.black,
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(5),
+            padding: const EdgeInsets.symmetric(horizontal: 5),
             child: Text(
               '\$${products.price!.toString()}',
               style: TextStyle(

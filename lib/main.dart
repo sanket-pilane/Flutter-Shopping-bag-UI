@@ -14,6 +14,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Bags Mania",
+      theme: ThemeData(
+        useMaterial3: true,
+      ),
       home: HomePage(),
     );
   }
