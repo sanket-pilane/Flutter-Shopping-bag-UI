@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shopping_bag_demo/constants.dart';
+import 'package:shopping_bag_demo/controller/product.dart';
 import 'package:shopping_bag_demo/models/products.dart';
 import 'package:shopping_bag_demo/screens/details/widgets/info_section.dart';
 import 'package:shopping_bag_demo/screens/details/widgets/top_section.dart';
@@ -102,9 +103,16 @@ class _DetailPageState extends State<DetailPage> {
                     ),
                     child: Row(
                       children: [
-                        Icon(
-                          isCartAdd ? Icons.check_circle : Icons.shopping_cart,
-                          color: Colors.white,
+                        GestureDetector(
+                          onTap: () {
+                            ProductController().addToFavourite(widget.products);
+                          },
+                          child: Icon(
+                            isCartAdd
+                                ? Icons.check_circle
+                                : Icons.shopping_cart,
+                            color: Colors.white,
+                          ),
                         ),
                         const SizedBox(
                           width: 6,
