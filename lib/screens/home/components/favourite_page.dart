@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:shopping_bag_demo/controller/product.dart';
 
@@ -13,14 +15,14 @@ class _FavourtiItemPageState extends State<FavourtiItemPage> {
 
   @override
   Widget build(BuildContext context) {
+    final bagList = productController.favourite;
     return Scaffold(
         appBar: AppBar(),
         body: SafeArea(
             child: ListView.builder(
-          itemCount: 10,
+          itemCount: productController.favourite.length,
           itemBuilder: (context, index) {
-            final bagList = productController.favourite;
-            return Text("");
+            return Text(bagList[index].title!);
           },
         )));
   }

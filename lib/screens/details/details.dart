@@ -92,6 +92,7 @@ class _DetailPageState extends State<DetailPage> {
                 GestureDetector(
                   onTap: () {
                     setState(() {
+                      ProductController().addToFavourite(widget.products);
                       isCartAdd = !isCartAdd;
                     });
                   },
@@ -104,9 +105,7 @@ class _DetailPageState extends State<DetailPage> {
                     child: Row(
                       children: [
                         GestureDetector(
-                          onTap: () {
-                            ProductController().addToFavourite(widget.products);
-                          },
+                          onTap: () {},
                           child: Icon(
                             isCartAdd
                                 ? Icons.check_circle
